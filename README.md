@@ -1,4 +1,4 @@
-# fedora-install
+# fedora-install - [Forked](https://git.furworks.de/tobias/fedora-install)
 
 A basic get-up-and-running Fedora install script.
 
