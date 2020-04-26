@@ -36,9 +36,9 @@ net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 EOF
 
-sudo tee -a /etc/sysctl.d/99-swappiness.conf > /dev/null  <<EOF
-vm.swappiness=1
-EOF
+#sudo tee -a /etc/sysctl.d/99-swappiness.conf > /dev/null  <<EOF
+#vm.swappiness=1
+#EOF
 
 
 ###
