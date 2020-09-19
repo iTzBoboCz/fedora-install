@@ -99,7 +99,7 @@ sudo auto-cpufreq --install
 mkdir extensions-remove && cd extensions-remove
 git clone https://github.com/micheleg/dash-to-dock.git
 make && make install
-cd .. && sudo rm -rf extensions-remove/
+# cd .. && sudo rm -rf extensions-remove/
 
 # gsettings set org.gnome.shell enabled-extensions "['user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'blyr@yozoon.dev.gmail.com']"
 
