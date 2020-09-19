@@ -31,6 +31,9 @@ sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/
 # Color picker (Elementary OS)
 # sudo api.github.com/repos/RonnyDo/ColorPicker/tarball
 
+# add Flathub
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 # enable snaps
 sudo apt install snapd -y
 
@@ -84,6 +87,9 @@ com.github.tchx84.Flatseal `#A permissions manager for Flatpak`
 
 sudo snap install \
 auto-cpufreq
+
+# installs auto-cpufreq's daemon
+sudo auto-cpufreq --install
 
 ###
 # Theming and GNOME Options
