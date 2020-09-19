@@ -105,8 +105,9 @@ gsettings set org.gnome.desktop.calendar show-weekdate true
 
 #Install Dash-to-Dock
 cd ~/.local/share/gnome-shell/extensions \
-&& sudo curl -o dash-to-dock@micxgx.gmail.com.shell-extension.zip https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v68.shell-extension.zip \
-&& sudo gnome-extensions install dash-to-dock@micxgx.gmail.com.shell-extension.zip \
+&& sudo curl -o dash-to-dock@micxgx.gmail.com.zip https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v68.shell-extension.zip \
+&& sudo gnome-extensions install dash-to-dock@micxgx.gmail.com.zip \
+&& sudo gnome-extensions enable dash-to-dock@micxgx.gmail.com \
 && sudo rm dash-to-dock@micxgx.gmail.com.shell-extension.zip \
 && cd ~ \
 && sudo gnome-shell --replace
