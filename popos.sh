@@ -109,7 +109,7 @@ cd ~/.local/share/gnome-shell/extensions \
 && gnome-extensions install dash-to-dock@micxgx.gmail.com.zip \
 && sudo rm dash-to-dock@micxgx.gmail.com.zip \
 && cd ~ \
-&& sudo gnome-shell -r
+&& dbus-send --type=method_call --print-reply --dest=org.gnome.Shell /org/gnome/Shell org.gnome.Shell.Eval string:'global.reexec_self()'
 
 
 #Dash to Dock settings
