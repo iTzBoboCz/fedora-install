@@ -108,9 +108,7 @@ cd ~/.local/share/gnome-shell/extensions \
 && sudo curl -o dash-to-dock@micxgx.gmail.com.zip https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v68.shell-extension.zip \
 && gnome-extensions install dash-to-dock@micxgx.gmail.com.zip \
 && sudo rm dash-to-dock@micxgx.gmail.com.zip \
-&& cd ~ \
-&& dbus-send --type=method_call --print-reply --dest=org.gnome.Shell /org/gnome/Shell org.gnome.Shell.Eval string:'global.reexec_self()'
-
+&& cd ~
 
 #Dash to Dock settings
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
@@ -139,6 +137,8 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 19.0
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 6.0
+
+dbus-send --type=method_call --print-reply --dest=org.gnome.Shell /org/gnome/Shell org.gnome.Shell.Eval string:'global.reexec_self()'
 
 #The user needs to reboot to apply all changes.
 echo "Please Reboot" && exit 0
