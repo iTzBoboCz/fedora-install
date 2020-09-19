@@ -97,34 +97,30 @@ sudo auto-cpufreq --install
 # Theming and GNOME Options
 ###
 
-#Set Extensions for gnome
-mkdir extensions-remove \
-&& cd extensions-remove \
-&& git clone https://github.com/micheleg/dash-to-dock.git \
-&& cd dash-to-dock \
-&& make \
-&& make install \
-&& cd ../.. \
-&& sudo rm -rf extensions-remove/
-
-# gsettings set org.gnome.shell enabled-extensions "['user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'blyr@yozoon.dev.gmail.com']"
-
 #Better Font Smoothing
 # gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing 'rgba'
 
 #Usability Improvements
 gsettings set org.gnome.desktop.calendar show-weekdate true
 
-#Dash to Dock Theme
-gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
-gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action 'cycle-windows'
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'LEFT'
-gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme false
-gsettings set org.gnome.shell.extensions.dash-to-dock custom-background-color false
-gsettings set org.gnome.shell.extensions.dash-to-dock intellihide-mode 'ALL_WINDOWS'
-gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.80000000000000000
-gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
-gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
+#Install Dash-to-Dock
+cd ~/.local/share/gnome-shell/extensions \
+&& sudo curl -o remove.zip https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v68.shell-extension.zip \
+&& sudo mkdir dash-to-dock.micxgx.gmail.com \
+&& sudo unzip remove.zip -d dash-to-dock.micxgx.gmail.com \
+&& cd ~
+
+
+#Dash to Dock settings
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock scroll-action 'cycle-windows'
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock dock-position 'LEFT'
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock apply-custom-theme false
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock custom-background-color false
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock intellihide-mode 'ALL_WINDOWS'
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock background-opacity 0.80000000000000000
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock show-mounts false
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock show-trash false
 
 #This indexer is nice, but can be detrimental for laptop users battery life
 gsettings set org.freedesktop.Tracker.Miner.Files index-on-battery false
