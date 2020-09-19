@@ -109,7 +109,7 @@ cd ~/.local/share/gnome-shell/extensions \
 && gnome-extensions install dash-to-dock@micxgx.gmail.com.zip \
 && sudo rm dash-to-dock@micxgx.gmail.com.zip \
 && cd ~ \
-&& sudo gnome-shell --replace
+&& sudo gnome-shell -r
 
 
 #Dash to Dock settings
