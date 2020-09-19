@@ -72,7 +72,7 @@ pulseeffects `#Tweak your Music!` \
 sqlite-analyzer `#If you work with sqlite databases` \
 sqlitebrowser \
 synaptic `#GUI for APT` \
-thunderbrid `#Mail client` \
+thunderbird `#Mail client` \
 ttf-mscorefonts-installer `#Microsoft's proprietary fonts` \
 vlc `#Media player` \
 zsh `#Syntax highlighting plugin for zsh` \
@@ -96,7 +96,12 @@ sudo auto-cpufreq --install
 ###
 
 #Set Extensions for gnome
-gsettings set org.gnome.shell enabled-extensions "['user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'blyr@yozoon.dev.gmail.com']"
+mkdir extensions-remove && cd extensions-remove
+git clone https://github.com/micheleg/dash-to-dock.git
+make && make install
+cd .. && sudo rm -rf extensions-remove/
+
+# gsettings set org.gnome.shell enabled-extensions "['user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'blyr@yozoon.dev.gmail.com']"
 
 #Better Font Smoothing
 # gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing 'rgba'
