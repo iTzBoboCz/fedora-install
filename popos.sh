@@ -53,6 +53,7 @@ baobab `#Disk Usage Analyzer` \
 breeze-cursor-theme `#A more comfortable Cursor Theme from KDE` \
 ffmpeg `#Adds Codec Support to Firefox, and in general` \
 file-roller `#GNOME Archive manager` \
+gettext `#A must for compiling dash-to-dock (Makefile)` \
 gimp \
 git \
 github-desktop \
@@ -67,6 +68,7 @@ nano \
 nautilus-admin `#Open as administrator in nautilus` \
 nautilus-gtkhash `#View file Hashes via nautilus` \
 nautilus-nextcloud `#Also for the File Manager, shows you file status` \
+neofetch \
 nextcloud-desktop `#Nextcloud client` \
 pulseeffects `#Tweak your Music!` \
 sqlite-analyzer `#If you work with sqlite databases` \
@@ -96,10 +98,14 @@ sudo auto-cpufreq --install
 ###
 
 #Set Extensions for gnome
-mkdir extensions-remove && cd extensions-remove
-git clone https://github.com/micheleg/dash-to-dock.git
-make && make install
-# cd .. && sudo rm -rf extensions-remove/
+mkdir extensions-remove \
+&& cd extensions-remove \
+&& git clone https://github.com/micheleg/dash-to-dock.git \
+&& cd dash-to-dock \
+&& make \
+&& make install \
+&& cd ../.. \
+&& sudo rm -rf extensions-remove/
 
 # gsettings set org.gnome.shell enabled-extensions "['user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'blyr@yozoon.dev.gmail.com']"
 
