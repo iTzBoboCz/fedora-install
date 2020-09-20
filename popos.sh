@@ -13,8 +13,8 @@ fi
 # Remove unnecessary packages
 ###
 
-sudo apt purge --auto-remove \
--y \
+# sudo apt purge --auto-remove \
+# -y \
 
 
 ###
@@ -140,5 +140,23 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 6.
 
 dbus-send --type=method_call --print-reply --dest=org.gnome.Shell /org/gnome/Shell org.gnome.Shell.Eval string:'global.reexec_self()'
 
+###
+# Other changes
+###
+
+# set shell to zsh
+if [ "${SHELL}" != "/bin/zsh" ]; then
+  chsh -s /bin/zsh
+fi
+
+#Clone dotfiles
+curl -LkSs https://github.com/iTzBoboCz/dotfiles/archive/master.zip -o dotfiles.zip \
+&& unzip dotfiles.zip -d ~/ \
+&& rm dotfiles.zip \
+# && (shopt -s dotglob; mv ~/dotfiles-master/* ~/smazat) \
+# && mv ~/dotfiles-master/* /smazat 2> /dev/null; mv ~/dotfiles-master/.* /smazat 2> /dev/null \
+# && mv ~/dotfiles-master/ smazat/ \
+&& cd ~
+
 #The user needs to reboot to apply all changes.
-echo "Please Reboot" && exit 0
+echo "Gnome shell was restarted.\nNevertheless, it is recommended to restart your computer." && exit 0
