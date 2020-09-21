@@ -93,6 +93,15 @@ auto-cpufreq
 # installs auto-cpufreq's daemon
 sudo auto-cpufreq --install
 
+#Install extensions to VSCode
+#code --install-extension ms-vscode.atom-keybindings
+# zhuangtongfa.Material-theme
+# file-icons.file-icons
+# ms-dotnettools.csharp
+# jchannon.csharpextensions
+# ms-vsliveshare.vsliveshare
+# mohsen1.prettify-json
+
 ###
 # Theming and GNOME Options
 ###
