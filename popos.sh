@@ -22,7 +22,7 @@ fi
 ###
 
 # SQLite
-sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser
+sudo add-apt-repository -qqy ppa:linuxgndu/sqlitebrowser
 
 # Github-desktop
 wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo apt-key add -
@@ -33,9 +33,6 @@ sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/
 
 # add Flathub
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-# enable snaps
-sudo apt install snapd -y
 
 ###
 # Force update the whole system to the latest and greatest
@@ -71,6 +68,7 @@ nautilus-nextcloud `#Also for the File Manager, shows you file status` \
 neofetch \
 nextcloud-desktop `#Nextcloud client` \
 pulseeffects `#Tweak your Music!` \
+snapd `#Snap daemon` \
 sqlite-analyzer `#If you work with sqlite databases` \
 sqlitebrowser \
 synaptic `#GUI for APT` \
