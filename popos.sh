@@ -22,7 +22,7 @@ fi
 ###
 
 # SQLite
-sudo add-apt-repository -qqy ppa:linuxgndu/sqlitebrowser
+sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser
 
 # Github-desktop
 wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo apt-key add -
