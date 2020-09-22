@@ -41,14 +41,14 @@ sudo apt install snapd -y
 # Force update the whole system to the latest and greatest
 ###
 
-sudo apt update && sudo apt upgrade -y
+sudo apt -qqy update && sudo apt -qqy upgrade
 
 ###
 # Install base packages and applications
 ###
 
-sudo apt install \
--y \
+sudo apt \
+-qqy install \
 baobab `#Disk Usage Analyzer` \
 breeze-cursor-theme `#A more comfortable Cursor Theme from KDE` \
 ffmpeg `#Adds Codec Support to Firefox, and in general` \
@@ -154,8 +154,8 @@ dbus-send --type=method_call --print-reply --dest=org.gnome.Shell /org/gnome/She
 ###
 
 # set shell to zsh
-if [ "${SHELL}" != "/bin/zsh" ]; then
-  chsh -s /bin/zsh
+if [ "${SHELL}" != $(which zsh) ]; then
+  chsh -s $(which zsh)
 fi
 
 #Clone dotfiles
