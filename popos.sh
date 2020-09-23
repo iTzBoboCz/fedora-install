@@ -113,7 +113,8 @@ sudo flatpak install \
 org.blender.Blender `#3D Software Powerhouse` \
 com.visualstudio.code \
 com.discordapp.Discord `#Communication client` \
-com.github.tchx84.Flatseal `#A permissions manager for Flatpak`
+com.github.tchx84.Flatseal `#A permissions manager for Flatpak` \
+com.github.marktext.marktext `#Simple yet powerful Markdown editor`
 
 sudo snap install \
 auto-cpufreq
