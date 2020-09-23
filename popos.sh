@@ -1,3 +1,26 @@
+#!/bin/bash
+
+# Default variables
+STEAMFLAT=false
+LAPTOP=false
+NVIDIA=false
+HELP_MSG="Optional arguments are:\n  --help | -h: Help page\n  --steam: Installs steam (flatpak version to avoid lib misaligment issues for games)\n  --laptop: Enables powersaving features\n  --nvidia: Installs proprietary drivers."
+
+# arg implicitly iterates over $@ (the array of positional parameters) and is equivalent to the explicit for arg in $@
+for arg
+do
+  case "${arg}" in
+    --help | -h) printf "${HELP_MSG}" && exit 1;;
+    --steam) STEAMFLAT=true;;
+    --laptop) LAPTOP=true;;
+    --nvidia) NVIDIA=true;;
+    *)
+      echo "Unknown argument"
+      exit 1
+      ;;
+   esac
+done
+
 printf "This script can set up your freshly installed Pop!_OS.\nIt will overwrite some of your settings.\nContinue? [Y/N]: " && read CONTINUE
 
 if [ "${CONTINUE}" != "Y" ]; then
@@ -27,6 +50,11 @@ sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser
 # Github-desktop
 wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftky-desktop.list'
+
+if [ "${LAPTOP}" = true ]; then
+  # TLP (Optimises battery usage)
+  sudo add-apt-repository ppa:linrunner/tlp
+fi
 
 # Color picker (Elementary OS)
 # sudo api.github.com/repos/RonnyDo/ColorPicker/tarball
@@ -73,6 +101,8 @@ sqlite-analyzer `#If you work with sqlite databases` \
 sqlitebrowser \
 synaptic `#GUI for APT` \
 thunderbird `#Mail client` \
+tlp `#Optimises battery usage` \
+tlp-rdw \
 ttf-mscorefonts-installer `#Microsoft's proprietary fonts` \
 vlc `#Media player` \
 zsh `#Syntax highlighting plugin for zsh` \
@@ -150,6 +180,9 @@ dbus-send --type=method_call --print-reply --dest=org.gnome.Shell /org/gnome/She
 ###
 # Other changes
 ###
+
+# enable tlp
+#sudo tlp start # enabled after reboot
 
 # set shell to zsh
 if [ "${SHELL}" != $(which zsh) ]; then
