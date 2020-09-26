@@ -32,6 +32,9 @@ if [ $(id -u) = 0 ]; then
    exit 1
 fi
 
+# Switch to bash
+bash
+
 ###
 # Remove unnecessary packages
 ###
