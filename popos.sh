@@ -176,6 +176,20 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-autom
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 19.0
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 6.0
 
+#Add gtk3-widget-factory as a desktop icon
+cat > ~/.local/share/applications/gtk3-widget-factory.desktop << EOF
+[Desktop Entry]
+Name=Widget Factory
+Comment=A showcase for GTK+ widgets, designed for testing themes.
+Exec=gtk3-widget-factory
+Icon=gtk3-widget-factory
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GTK;
+NoDisplay=false
+EOF
+
 dbus-send --type=method_call --print-reply --dest=org.gnome.Shell /org/gnome/Shell org.gnome.Shell.Eval string:'global.reexec_self()'
 
 ###
