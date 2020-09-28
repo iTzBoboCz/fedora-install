@@ -135,6 +135,12 @@ sudo auto-cpufreq --install
 # Theming and GNOME Options
 ###
 
+#Gnome Shell Theming
+# gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-${THEME}"
+gsettings set org.gnome.desktop.interface cursor-theme 'Breeze_cursors'
+# gsettings set org.gnome.desktop.interface icon-theme 'gnome'
+# gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark-solid'
+
 #Better Font Smoothing
 # gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing 'rgba'
 
