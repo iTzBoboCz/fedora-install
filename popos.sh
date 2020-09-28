@@ -190,6 +190,10 @@ Categories=GTK;
 NoDisplay=false
 EOF
 
+#Change Wallpaper
+curl https://images.wallpaperscraft.com/image/house_forest_art_131857_2560x1600.jpg > ~/house_forest_art_131857_2560x1600.jpg
+gsettings set org.gnome.desktop.background picture-uri "file:///home/$USER/house_forest_art_131857_2560x1600.jpg"
+
 dbus-send --type=method_call --print-reply --dest=org.gnome.Shell /org/gnome/Shell org.gnome.Shell.Eval string:'global.reexec_self()'
 
 ###
