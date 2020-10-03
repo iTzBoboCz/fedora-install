@@ -116,6 +116,8 @@ com.discordapp.Discord `#Communication client` \
 com.github.tchx84.Flatseal `#A permissions manager for Flatpak` \
 com.github.marktext.marktext `#Simple yet powerful Markdown editor`
 
+# https://gitlab.gnome.org/GabMus/giara
+
 sudo snap install \
 auto-cpufreq
 
@@ -130,6 +132,28 @@ sudo auto-cpufreq --install
 # jchannon.csharpextensions
 # ms-vsliveshare.vsliveshare
 # mohsen1.prettify-json
+
+# podpora jazyků
+# hyphen-cs
+# libreoffice-help-cs
+# firefox-locale-cs
+# fonts-noto-ui-core
+# gimp-help-ja
+# mozc-utils-gui
+# gimp-help-ru
+# hunspell-cs
+# fonts-noto-core
+# gimp-help-pt
+# mythes-cs
+# libreoffice-l10n-cs
+# gimp-help-de
+# gimp-help-fr
+# gnome-user-docs-cs
+# gimp-help-it
+# gimp-help-es
+# gnome-getting-started-docs-cs
+# gimp-help-en
+
 
 ###
 # Theming and GNOME Options
@@ -148,11 +172,17 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Breeze_cursors'
 gsettings set org.gnome.desktop.calendar show-weekdate true
 
 #Install Dash-to-Dock
-cd ~/.local/share/gnome-shell/extensions \
-&& sudo curl -o dash-to-dock@micxgx.gmail.com.zip https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v68.shell-extension.zip \
+cd ~/.local/share/gnome-shell/extensions
+
+sudo curl -o dash-to-dock@micxgx.gmail.com.zip https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v68.shell-extension.zip \
 && gnome-extensions install dash-to-dock@micxgx.gmail.com.zip \
-&& sudo rm dash-to-dock@micxgx.gmail.com.zip \
-&& cd ~
+&& sudo rm dash-to-dock@micxgx.gmail.com.zip
+
+sudo curl -o user-theme@gnome-shell-extensions.gcampax.github.com.zip https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip \
+&& gnome-extensions install user-theme@gnome-shell-extensions.gcampax.github.com.zip \
+&& sudo rm user-theme@gnome-shell-extensions.gcampax.github.com.zip
+
+cd ~
 
 #Dash to Dock settings
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
