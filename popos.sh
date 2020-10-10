@@ -114,6 +114,7 @@ org.blender.Blender `#3D Software Powerhouse` \
 com.visualstudio.code \
 com.discordapp.Discord `#Communication client` \
 com.github.tchx84.Flatseal `#A permissions manager for Flatpak` \
+org.linux_hardware.hw-probe `#Detect drivers` \
 com.github.marktext.marktext `#Simple yet powerful Markdown editor`
 
 # https://gitlab.gnome.org/GabMus/giara
@@ -238,6 +239,9 @@ dbus-send --type=method_call --print-reply --dest=org.gnome.Shell /org/gnome/She
 
 # enable tlp
 #sudo tlp start # enabled after reboot
+
+# run HW Probe (https://linux-hardware.org)
+# flatpak run org.linux_hardware.hw-probe
 
 # set shell to zsh
 if [ "${SHELL}" != $(which zsh) ]; then
