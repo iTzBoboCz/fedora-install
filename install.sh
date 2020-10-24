@@ -24,6 +24,7 @@ done
 printf "This script can set up your freshly installed system.\nIt will overwrite some of your settings.\nContinue? [Y/N]: " && read CONTINUE
 
 if [ "${CONTINUE}" != "Y" ]; then
+  printf "Operation terminated."
   exit 1
 fi
 
