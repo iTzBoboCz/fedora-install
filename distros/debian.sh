@@ -73,16 +73,6 @@ vlc `#Media player` \
 zsh `#Syntax highlighting plugin for zsh` \
 zsh-syntax-highlighting `#Syntax highlighting plugin for zsh`
 
-. flatpak.sh
-
-# https://gitlab.gnome.org/GabMus/giara
-
-sudo snap install \
-auto-cpufreq
-
-# installs auto-cpufreq's daemon
-sudo auto-cpufreq --install
-
 #Install extensions to VSCode
 #code --install-extension ms-vscode.atom-keybindings
 # zhuangtongfa.Material-theme
@@ -113,37 +103,9 @@ sudo auto-cpufreq --install
 # gnome-getting-started-docs-cs
 # gimp-help-en
 
-
-###
-# Theming and GNOME Options
-###
-
-# run gnome.sh
-. gnome.sh
-
 ###
 # Other changes
 ###
 
 # enable tlp
 #sudo tlp start # enabled after reboot
-
-# run HW Probe (https://linux-hardware.org)
-# flatpak run org.linux_hardware.hw-probe
-
-# set shell to zsh
-if [ "${SHELL}" != $(which zsh) ]; then
-  chsh -s $(which zsh)
-fi
-
-#Clone dotfiles
-curl -LkSs https://github.com/iTzBoboCz/dotfiles/archive/master.zip -o dotfiles.zip \
-&& unzip dotfiles.zip -d ~/ \
-&& rm dotfiles.zip \
-# && (shopt -s dotglob; mv ~/dotfiles-master/* ~/smazat) \
-# && mv ~/dotfiles-master/* /smazat 2> /dev/null; mv ~/dotfiles-master/.* /smazat 2> /dev/null \
-# && mv ~/dotfiles-master/ smazat/ \
-&& cd ~
-
-#The user needs to reboot to apply all changes.
-echo "Gnome shell was restarted.\nNevertheless, it is recommended to restart your computer." && exit 0

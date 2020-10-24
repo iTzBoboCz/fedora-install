@@ -42,5 +42,30 @@ if [[ "{$ID_LIKE}" = "debian" ]]; then
 elif [[ "{$ID}" = "fedora" ]]; then
   . distros/fedora.sh
 else
-  printd "Your distribution of choice has not yet been manually confirmed to work with this script. Feel free to edit this according to your needs."
+  printf "Your distribution of choice has not yet been manually confirmed to work with this script. Feel free to edit this according to your needs."
 fi
+
+# installs flatpak apps
+. flatpak.sh
+
+# installs snap
+#. snap.sh
+
+if [[ "{$XDG_CURRENT_DESKTOP}" = "GNOME" ]]; then
+  . gnome.sh
+fi
+
+# install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+#Clone dotfiles
+curl -LkSs https://github.com/iTzBoboCz/dotfiles/archive/master.zip -o dotfiles.zip \
+&& unzip dotfiles.zip -d ~/ \
+&& rm dotfiles.zip \
+# && (shopt -s dotglob; mv ~/dotfiles-master/* ~/smazat) \
+# && mv ~/dotfiles-master/* /smazat 2> /dev/null; mv ~/dotfiles-master/.* /smazat 2> /dev/null \
+# && mv ~/dotfiles-master/ smazat/ \
+&& cd ~
+
+#The user needs to reboot to apply all changes.
+echo "Gnome shell was restarted.\nNevertheless, it is recommended to restart your computer." && exit 0
