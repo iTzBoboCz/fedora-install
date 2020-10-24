@@ -33,12 +33,14 @@ if [ $(id -u) = 0 ]; then
    exit 1
 fi
 
+# load os info
 source /etc/os-release
-# Pop!_OS, Ubuntu
+
+# Pop!_OS, Ubuntu, Mint,..
 if [[ "{$ID_LIKE}" = "debian" ]]; then
-  . debian.sh
+  . distros/debian.sh
 elif [[ "{$ID}" = "fedora" ]]; then
-  . fedora.sh
+  . distros/fedora.sh
 else
   printd "Your distribution of choice has not yet been manually confirmed to work with this script. Feel free to edit this according to your needs."
 fi
