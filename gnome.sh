@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# $XDG_CURRENT_DESKTOP == "GNOME"
+
 #Gnome Shell Theming
 # gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-${THEME}"
 gsettings set org.gnome.desktop.interface cursor-theme 'Breeze_cursors'

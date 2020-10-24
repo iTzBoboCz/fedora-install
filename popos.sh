@@ -1,31 +1,5 @@
 #!/bin/bash
 
-# arg implicitly iterates over $@ (the array of positional parameters) and is equivalent to the explicit for arg in $@
-for arg
-do
-  case "${arg}" in
-    --help | -h) printf "${HELP_MSG}" && exit 1;;
-    --steam) STEAMFLAT=true;;
-    --laptop) LAPTOP=true;;
-    --nvidia) NVIDIA=true;;
-    *)
-      echo "Unknown argument"
-      exit 1
-      ;;
-   esac
-done
-
-printf "This script can set up your freshly installed Pop!_OS.\nIt will overwrite some of your settings.\nContinue? [Y/N]: " && read CONTINUE
-
-if [ "${CONTINUE}" != "Y" ]; then
-  exit 1
-fi
-
-if [ $(id -u) = 0 ]; then
-   printf "This script changes user's gsettings and should thus not be run as root!"
-   exit 1
-fi
-
 ###
 # Remove unnecessary packages
 ###
@@ -52,9 +26,6 @@ fi
 
 # Color picker (Elementary OS)
 # sudo api.github.com/repos/RonnyDo/ColorPicker/tarball
-
-# add Flathub
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 ###
 # Force update the whole system to the latest and greatest
@@ -102,14 +73,7 @@ vlc `#Media player` \
 zsh `#Syntax highlighting plugin for zsh` \
 zsh-syntax-highlighting `#Syntax highlighting plugin for zsh`
 
-sudo flatpak install \
--y \
-org.blender.Blender `#3D Software Powerhouse` \
-com.visualstudio.code \
-com.discordapp.Discord `#Communication client` \
-com.github.tchx84.Flatseal `#A permissions manager for Flatpak` \
-org.linux_hardware.hw-probe `#Detect drivers` \
-com.github.marktext.marktext `#Simple yet powerful Markdown editor`
+. flatpak.sh
 
 # https://gitlab.gnome.org/GabMus/giara
 
