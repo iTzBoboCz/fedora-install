@@ -32,3 +32,13 @@ if [ $(id -u) = 0 ]; then
    printf "This script changes user's gsettings and should thus not be run as root!"
    exit 1
 fi
+
+source /etc/os-release
+# Pop!_OS, Ubuntu
+if [[ "{$ID_LIKE}" = "debian" ]]; then
+  . debian.sh
+elif [[ "{$ID}" = "fedora" ]]; then
+  . fedora.sh
+else
+  printd "Your distribution of choice has not yet been manually confirmed to work with this script. Feel free to edit this according to your needs."
+fi
