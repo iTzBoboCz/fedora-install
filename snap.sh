@@ -1,7 +1,9 @@
 #!/bin/bash
 
-sudo snap install \
-auto-cpufreq
+if [[ "{$LAPTOP}" = "true" ]]; then
+  sudo snap install \
+  auto-cpufreq
 
-# installs auto-cpufreq's daemon
-sudo auto-cpufreq --install
+  # installs auto-cpufreq's daemon
+  sudo auto-cpufreq --install
+fi
