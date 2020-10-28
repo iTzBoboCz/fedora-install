@@ -137,6 +137,11 @@ sudo dnf distro-sync -y
 # Install base packages and applications
 ###
 
+sudo dnf group install \
+-y \
+php \
+fonts
+
 sudo dnf install \
 -y \
 blender `#3D Software Powerhouse` \
