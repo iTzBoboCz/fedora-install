@@ -37,9 +37,9 @@ fi
 source /etc/os-release
 
 # Pop!_OS, Ubuntu, Mint,..
-if [[ "{$ID_LIKE}" = "debian" ]]; then
+if [[ "${ID_LIKE}" = "debian" ]]; then
   . distros/debian.sh
-elif [[ "{$ID}" = "fedora" ]]; then
+elif [[ "${ID}" = "fedora" ]]; then
   . distros/fedora.sh
 else
   printf "Your distribution of choice has not yet been manually confirmed to work with this script. Feel free to edit this according to your needs."
