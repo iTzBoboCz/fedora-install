@@ -1,27 +1,5 @@
 #!/bin/bash
 
-# DO NOT RUN YET
-exit 1
-
-
-# Some Kernel/Usability Improvements
-sudo tee -a /etc/sysctl.d/40-max-user-watches.conf > /dev/null  <<EOF
-fs.inotify.max_user_watches=524288
-EOF
-
-# Some Kernel/Usability Improvements
-sudo tee -a /etc/sysctl.d/99-network.conf > /dev/null  <<EOF
-net.ipv4.ip_forward=0
-net.ipv4.tcp_ecn=1
-net.core.default_qdisc=fq
-net.ipv4.tcp_congestion_control=bbr
-EOF
-
-#sudo tee -a /etc/sysctl.d/99-swappiness.conf > /dev/null  <<EOF
-#vm.swappiness=1
-#EOF
-
-
 ###
 # Optionally clean all dnf temporary files
 ###
@@ -62,7 +40,7 @@ sudo sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/rpmfusion-free-updates-te
 sudo sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/fedora-cisco-openh264.repo
 
 # Disable Machine Counting for all repos
-sudo sed -i 's/countme=1/countme=0/g' /etc/yum.repos.d/*
+# sudo sed -i 's/countme=1/countme=0/g' /etc/yum.repos.d/*
 
 # vscodium, an open source fork of vscode
 sudo tee -a /etc/pki/rpm-gpg/vscodium > /dev/null <<EOF
@@ -128,10 +106,10 @@ sudo sh -c 'echo -e "[shiftkey]\nname=GitHub Desktop\nbaseurl=https://packageclo
 # Force update the whole system to the latest and greatest
 ###
 
-sudo dnf upgrade --best --allowerasing --refresh -y
+sudo dnf upgrade --best --allowerasing --refresh -y "${QUIET}"
 
 # And also remove any packages without a source backing them
-sudo dnf distro-sync -y
+sudo dnf distro-sync -y "${QUIET}"
 
 ###
 # Install base packages and applications
@@ -139,11 +117,14 @@ sudo dnf distro-sync -y
 
 sudo dnf group install \
 -y \
+"${QUIET}" \
 php \
-fonts
+fonts \
+graphics
 
 sudo dnf install \
 -y \
+"${QUIET}" \
 blender `#3D Software Powerhouse` \
 breeze-cursor-theme `#A more comfortable Cursor Theme from KDE` \
 calibre `#Ebook management` \
@@ -193,70 +174,39 @@ nextcloud-client-nautilus `#Also for the File Manager, shows you file status` \
 sqlite-analyzer `#If you work with sqlite databases` \
 sqlitebrowser `#These two help alot`
 
-# Pulseeffects: Autoenable
-tee -a ~/.config/autostart/pulseeffects-service.desktop > /dev/null <<EOF
-[Desktop Entry]
-Name=PulseEffects
-Comment=PulseEffects Service
-Exec=pulseeffects --gapplication-service
-Icon=pulseeffects
-StartupNotify=false
-Terminal=false
-Type=Application
-EOF
-
-# Pulse: Quality+++
-tee -a ~/.config/pulse/daemon.conf > /dev/null <<EOF
-default-sample-format = float32ne
-default-sample-rate = 48000
-alternate-sample-rate = 44100
-resample-method = speex-float-10
-high-priority = yes
-nice-level = -18
-realtime-scheduling = no
-realtime-priority = 9
-rlimit-rtprio = 9
-avoid-resampling = yes
-EOF
+# # Pulseeffects: Autoenable
+# tee -a ~/.config/autostart/pulseeffects-service.desktop > /dev/null <<EOF
+# [Desktop Entry]
+# Name=PulseEffects
+# Comment=PulseEffects Service
+# Exec=pulseeffects --gapplication-service
+# Icon=pulseeffects
+# StartupNotify=false
+# Terminal=false
+# Type=Application
+# EOF
+#
+# # Pulse: Quality+++
+# tee -a ~/.config/pulse/daemon.conf > /dev/null <<EOF
+# default-sample-format = float32ne
+# default-sample-rate = 48000
+# alternate-sample-rate = 44100
+# resample-method = speex-float-10
+# high-priority = yes
+# nice-level = -18
+# realtime-scheduling = no
+# realtime-priority = 9
+# rlimit-rtprio = 9
+# avoid-resampling = yes
+# EOF
 
 ###
 # Remove some un-needed stuff
 ###
 
-sudo dnf remove \
--y \
-gnome-shell-extension-background-logo `#Tasteful but nah` \
-totem `#With mpv installed totem became a little useless` \
-chromium `#Using Chromium resets chromium-vaapi so remove it if installed, userprofiles will be kept and can be used in -vaapi`
-
-if [ "${NVIDIA}" = true ]; then
-  # sudo dnf copr enable szydell/system76
-  # sudo dnf install system76-power
-fi
-
 if [ "${LAPTOP}" = true ]; then
   sudo systemctl enable --now tuned
   sudo tuned-adm profile balanced
-
-  # system76-power extension doesn't seem to be easily compilable for fedora
-  # if [ "${NVIDIA}" = true ]; then
-  #   # enable copr repo
-  #   sudo dnf copr enable szydell/system76
-  #   sudo dnf install system76-power
-  #
-  #   # enable and start daemon
-  #   sudo systemctl enable system76-power system76-power-wake
-  #   sudo systemctl start system76-power
-  #
-  #   # switch to intel graphics
-  #   system76-power graphics intel
-  #
-  #   # install gnome-shell extension
-  #   sudo dnf install nodejs-typescript
-  #   git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git
-  #
-  #   reboot
-  # fi
 fi
 
 #Performance:
