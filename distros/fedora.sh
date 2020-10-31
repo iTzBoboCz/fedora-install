@@ -174,6 +174,7 @@ gmic-gimp \
 gnome-shell-extension-dash-to-dock `#dasechoh for gnome` \
 gnome-shell-extension-user-theme `#Enables theming the gnome shell` \
 gnome-tweaks `#Your central place to make gnome like you want` \
+gource `#Git visualisation` \
 gtkhash-nautilus `#View file Hashes via nautilus` \
 htop `#Cli process monitor` \
 vlc `#Media player` \
