@@ -14,6 +14,7 @@ com.github.tchx84.Flatseal `#A permissions manager for Flatpak` \
 #flathub org.gabmus.giara `#Reddit native linux app` \
 org.linux_hardware.hw-probe `#Detect drivers` \
 com.github.marktext.marktext `#Simple yet powerful Markdown editor`
+#org.cvfosammmm.Setzer `#LaTeX editor`
 
 # Steam games (32bit) have issues with the too new 32bit compat libs in fedora
 # Flatpak is the better option here
