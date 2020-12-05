@@ -50,7 +50,7 @@ github-desktop \
 gnome-tweak-tool \
 gparted \
 htop `#Cli process monitor` \
-language-pack-gnome-cs `#System language (Czech)`
+language-pack-gnome-cs `#System language (Czech)` \
 libreoffice-gnome `#Libreoffice integration for gnome` \
 libreoffice `#office suite` \
 meld `#Quick Diff Tool` \
