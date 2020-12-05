@@ -54,7 +54,7 @@ fi
 #. snap.sh
 
 # Pop!_OS outputs Unity
-if [[ "{$XDG_CURRENT_DESKTOP}" = "GNOME" ]] || [[ "{$XDG_CURRENT_DESKTOP}" = "Unity" ]]; then
+if [[ "{$XDG_CURRENT_DESKTOP}" == "GNOME" || "{$XDG_CURRENT_DESKTOP}" == "Unity" ]]; then
   . gnome.sh
 fi
 
