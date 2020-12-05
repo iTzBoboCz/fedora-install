@@ -62,7 +62,6 @@ neofetch \
 nextcloud-desktop `#Nextcloud client` \
 pulseeffects `#Tweak your Music!` \
 snapd `#Snap daemon` \
-sqlite-analyzer `#If you work with sqlite databases` \
 sqlitebrowser \
 synaptic `#GUI for APT` \
 thunderbird `#Mail client` \
