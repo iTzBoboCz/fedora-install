@@ -39,7 +39,7 @@ fi
 source /etc/os-release
 
 # Pop!_OS, Ubuntu, Mint,..
-if [[ "${ID_LIKE}" = "debian" ]]; then
+if [[ "${ID_LIKE}" = *"debian"* ]]; then
   . distros/debian.sh
 elif [[ "${ID}" = "fedora" ]]; then
   . distros/fedora.sh
