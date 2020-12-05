@@ -5,6 +5,7 @@ STEAMFLAT=false
 LAPTOP=false
 NVIDIA=false
 QUIET=""
+QUIET_DOUBLE=""
 HELP_MSG="Optional arguments are:\n  --help | -h: Help page\n  --steam: Installs steam (flatpak version to avoid lib misaligment issues for games)\n  --laptop: Enables powersaving features\n  --nvidia: Installs proprietary drivers."
 
 # arg implicitly iterates over $@ (the array of positional parameters) and is equivalent to the explicit for arg in $@
@@ -15,7 +16,7 @@ do
     --steam) STEAMFLAT=true;;
     --laptop) LAPTOP=true;;
     --nvidia) NVIDIA=true;;
-    --quiet | -q) QUIET="-q";;
+    --quiet | -q) QUIET="-q" && QUIET_DOUBLE="-qq";;
     *)
       echo "Unknown argument"
       exit 1

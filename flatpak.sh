@@ -16,6 +16,17 @@ org.linux_hardware.hw-probe `#Detect drivers` \
 com.github.marktext.marktext `#Simple yet powerful Markdown editor`
 #org.cvfosammmm.Setzer `#LaTeX editor`
 
+# Basic setup of VSCode
+# code --install-extension \
+# ms-vscode.atom-keybindings `#Atom editor keybindings; Feel free to remove this if you aren't used to these.` \
+# rafaelmardojai.vscode-gnome-theme `#Color theme to match gnome's adwaita` \
+# zhuangtongfa.Material-theme `#Material theme` \
+# file-icons.file-icons `#File icons` \
+# ms-dotnettools.csharp \
+# jchannon.csharpextensions \
+# ms-vsliveshare.vsliveshare `#Live code cooperation` \
+# mohsen1.prettify-json `#JSON Prettifier`
+
 # Steam games (32bit) have issues with the too new 32bit compat libs in fedora
 # Flatpak is the better option here
 if [[ "{$STEAMFLAT}" = "true" ]]; then

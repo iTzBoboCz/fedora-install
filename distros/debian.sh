@@ -31,14 +31,14 @@ fi
 # Force update the whole system to the latest and greatest
 ###
 
-sudo apt -qqy update && sudo apt -qqy upgrade
+sudo apt -"${QUIET_DOUBLE}"y update && sudo apt -"${QUIET_DOUBLE}"y upgrade
 
 ###
 # Install base packages and applications
 ###
 
 sudo apt \
--qqy install \
+-"${QUIET_DOUBLE}"y install \
 baobab `#Disk Usage Analyzer` \
 breeze-cursor-theme `#A more comfortable Cursor Theme from KDE` \
 ffmpeg `#Adds Codec Support to Firefox, and in general` \
@@ -72,15 +72,6 @@ ttf-mscorefonts-installer `#Microsoft's proprietary fonts` \
 vlc `#Media player` \
 zsh `#Syntax highlighting plugin for zsh` \
 zsh-syntax-highlighting `#Syntax highlighting plugin for zsh`
-
-#Install extensions to VSCode
-#code --install-extension ms-vscode.atom-keybindings
-# zhuangtongfa.Material-theme
-# file-icons.file-icons
-# ms-dotnettools.csharp
-# jchannon.csharpextensions
-# ms-vsliveshare.vsliveshare
-# mohsen1.prettify-json
 
 # podpora jazyků
 # hyphen-cs
