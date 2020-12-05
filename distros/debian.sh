@@ -31,14 +31,14 @@ fi
 # Force update the whole system to the latest and greatest
 ###
 
-sudo apt -"${QUIET_DOUBLE}"y update && sudo apt -"${QUIET_DOUBLE}"y upgrade
+sudo apt -y "${QUIET_DOUBLE}" update && sudo apt -y "${QUIET_DOUBLE}" upgrade
 
 ###
 # Install base packages and applications
 ###
 
 sudo apt \
--"${QUIET_DOUBLE}"y install \
+-y "${QUIET_DOUBLE}" install \
 baobab `#Disk Usage Analyzer` \
 breeze-cursor-theme `#A more comfortable Cursor Theme from KDE` \
 ffmpeg `#Adds Codec Support to Firefox, and in general` \
