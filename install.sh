@@ -53,7 +53,8 @@ fi
 # installs snap
 #. snap.sh
 
-if [[ "{$XDG_CURRENT_DESKTOP}" = "GNOME" ]]; then
+# Pop!_OS outputs Unity
+if [[ "{$XDG_CURRENT_DESKTOP}" = "GNOME" ]] || [[ "{$XDG_CURRENT_DESKTOP}" = "Unity" ]]; then
   . gnome.sh
 fi
 
