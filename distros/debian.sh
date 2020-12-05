@@ -21,7 +21,7 @@ sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/
 
 if [ "${LAPTOP}" = true ]; then
   # TLP (Optimises battery usage)
-  sudo add-apt-repository ppa:linrunner/tlp
+  sudo add-apt-repository -y ppa:linrunner/tlp
 fi
 
 # Color picker (Elementary OS)
