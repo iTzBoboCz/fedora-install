@@ -19,8 +19,12 @@ gsettings set org.gnome.desktop.calendar show-weekdate true
 bash <(curl -s https://raw.githubusercontent.com/brunelli/gnome-shell-extension-installer/master/gnome-shell-extension-installer) \
 307 `#Dash to Dock` \
 19 `#User Themes` \
-1625 `#Soft Brightness` \
 3499 `#Application Volume Mixer`
+
+if [[ "{$LAPTOP}" = "false" ]]; then
+  bash <(curl -s https://raw.githubusercontent.com/brunelli/gnome-shell-extension-installer/master/gnome-shell-extension-installer) \
+  fi1625 `#Soft Brightness` \
+fi
 
 cd ~
 
