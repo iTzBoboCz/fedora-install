@@ -56,6 +56,7 @@ gsettings set org.gnome.nautilus.icon-view default-zoom-level 'standard'
 # gsettings set org.gnome.nautilus.preferences executable-text-activation 'ask'
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 gsettings set org.gnome.nautilus.list-view use-tree-view false
+gsettings set org.gnome.nautilus.preferences recursive-search 'always' # default is 'local-only'
 
 #Gnome Night Light (Like flux/redshift)
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
