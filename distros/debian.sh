@@ -53,14 +53,12 @@ htop `#Cli process monitor` \
 language-pack-gnome-cs `#System language (Czech)` \
 libreoffice-gnome `#Libreoffice integration for gnome` \
 libreoffice `#office suite` \
-meld `#Quick Diff Tool` \
 nano \
 nautilus-admin `#Open as administrator in nautilus` \
 nautilus-gtkhash `#View file Hashes via nautilus` \
 nautilus-nextcloud `#Also for the File Manager, shows you file status` \
 neofetch \
 nextcloud-desktop `#Nextcloud client` \
-pulseeffects `#Tweak your Music!` \
 snapd `#Snap daemon` \
 sqlitebrowser \
 synaptic `#GUI for APT` \

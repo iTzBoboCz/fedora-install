@@ -68,22 +68,6 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-autom
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 19.0
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 6.0
 
-# Basic Music Example Tweaks
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.bassenhancer post-messages true
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.bassenhancer state true
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.bassenhancer amount 4.0
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.bassenhancer harmonics 10.0
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.bassenhancer scope 75.0
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.bassenhancer floor 10.0
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.bassenhancer blend -10.0
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.bassenhancer input-gain -3.0
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.stereotools post-messages true
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.stereotools state true
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.stereotools sc-level 1.0
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.stereotools delay 0.10000000000000000
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.stereotools stereo-base 0.10000000000000000
-# gsettings set com.github.wwmm.pulseeffects.sinkinputs.stereotools stereo-phase 0.10000000000000000
-
 #Add gtk3-widget-factory as a desktop icon
 cat > ~/.local/share/applications/gtk3-widget-factory.desktop << EOF
 [Desktop Entry]
