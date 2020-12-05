@@ -59,7 +59,9 @@ if [[ "${XDG_CURRENT_DESKTOP}" == "GNOME" || "${XDG_CURRENT_DESKTOP}" == "Unity"
 fi
 
 # install Oh My Zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if ! command -v zsh &> /dev/null; then
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
 #Clone dotfiles
 curl -LkSs https://github.com/iTzBoboCz/dotfiles/archive/master.zip -o dotfiles.zip \
