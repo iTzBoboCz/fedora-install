@@ -68,9 +68,6 @@ fi
 curl -LkSs https://github.com/iTzBoboCz/dotfiles/archive/master.zip -o dotfiles.zip \
 && unzip dotfiles.zip -d ~/ \
 && rm dotfiles.zip \
-# && (shopt -s dotglob; mv ~/dotfiles-master/* ~/smazat) \
-# && mv ~/dotfiles-master/* /smazat 2> /dev/null; mv ~/dotfiles-master/.* /smazat 2> /dev/null \
-# && mv ~/dotfiles-master/ smazat/ \
 && cd ~
 
 #The user needs to reboot to apply all changes.
