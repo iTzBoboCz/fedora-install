@@ -21,6 +21,7 @@ vscodeextensions=(\
 ms-vscode.atom-keybindings `#Atom editor keybindings; Feel free to remove this if you aren't used to these.` \
 rafaelmardojai.vscode-gnome-theme `#Color theme to match gnome's adwaita` \
 zhuangtongfa.Material-theme `#Material theme` \
+jmrog.vscode-nuget-package-manager `#Manager for Nugets` \
 file-icons.file-icons `#File icons` \
 ms-dotnettools.csharp \
 jchannon.csharpextensions \
