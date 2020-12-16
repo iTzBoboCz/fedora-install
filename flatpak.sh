@@ -10,6 +10,7 @@ sudo flatpak install \
 org.blender.Blender `#3D Software Powerhouse` \
 com.visualstudio.code \
 com.discordapp.Discord `#Communication client` \
+com.github.maoschanz.drawing \
 com.github.tchx84.Flatseal `#A permissions manager for Flatpak` \
 #flathub org.gabmus.giara `#Reddit native linux app` \
 org.linux_hardware.hw-probe `#Detect drivers` \
