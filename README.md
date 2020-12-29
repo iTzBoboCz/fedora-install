@@ -17,7 +17,10 @@ All you have to do is run
 
 ```sh
 # get
-$ https://github.com/iTzBoboCz/fedora-install/archive/main.zip
+$ curl -LkSs https://github.com/iTzBoboCz/fedora-install/archive/master.zip -o dotfiles.zip \
+&& unzip dotfiles.zip -d ~/ \
+&& rm dotfiles.zip \
+&& cd ~
 
 # this one-liner probably doesnt work as it has many sub-scripts
 foo@bar:~$ bash <(curl -s https://raw.githubusercontent.com/iTzBoboCz/fedora-install/main/install.sh)
