@@ -1,19 +1,34 @@
-# fedora-install - [Forked](https://git.furworks.de/tobias/fedora-install)
+<h1 align="center">Setuprr</h1>
+<p align="center">
+  <img alt="Logo Banner" src="https://raw.githubusercontent.com/iTzBoboCz/fedora-install/master/logo.svg?sanitize=true"/>
+  <br/>
+  <br/>
+  <a href="https://github.com/iTzBoboCz/fedora-install">
+  <img alt="GPL 3.0 License" src="https://img.shields.io/github/license/iTzBoboCz/fedora-install.svg"/>
+  </a>
+  <a href="https://github.com/iTzBoboCz/fedora-install/releases">
+  <img alt="Current Release" src="https://img.shields.io/github/release/iTzBoboCz/fedora-install.svg"/>
+  </a>
+</p>
 
-A basic get-up-and-running Fedora install script.
+Linux setup script to get you running fast.
 
-It supposed to give you an easy starting point, with quite a few good tools and a better looking/usable theme, or simple things like reenabling the maximize/minimize buttons for gnome.
+All you have to do is run
 
-These are of course by nature my opinions for how to go about it, to save newcomers twenty pages of clicking in guis that you'd have to do to achieve the same.
+```sh
+# get
+$ https://github.com/iTzBoboCz/fedora-install/archive/main.zip
 
+# this one-liner probably doesnt work as it has many sub-scripts
+foo@bar:~$ bash <(curl -s https://raw.githubusercontent.com/iTzBoboCz/fedora-install/main/install.sh)
+```
 
-If you have Improvements or Issues, contact me!:
+### If you:
+- 💡 have any ideas that this project could benefit from
+- ❌ came across any bugs or issues
 
-https://t.me/wolfshappen
-
-
-## Things YOU have to do after:
-Read the script! Seriously!
+please contect me through GitHub Issues!
+## Arguments
 
 There are additions, like if you have an AMD gpu and want to use the much better mesa-aco to render things you need to run steamlike this in a terminal/override then flatpak env:
 
