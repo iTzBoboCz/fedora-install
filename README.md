@@ -27,7 +27,7 @@ foo@bar:~$ bash <(curl -s https://raw.githubusercontent.com/iTzBoboCz/fedora-ins
 - 💡 have any ideas that this project could benefit from
 - ❌ came across any bugs or issues
 
-please contect me through GitHub Issues!
+please contact me through GitHub Issues!
 ## Arguments
 
 There are additions, like if you have an AMD gpu and want to use the much better mesa-aco to render things you need to run steamlike this in a terminal/override then flatpak env:
