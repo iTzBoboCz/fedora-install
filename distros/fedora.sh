@@ -128,7 +128,7 @@ sudo dnf install \
 blender `#3D Software Powerhouse` \
 breeze-cursor-theme `#A more comfortable Cursor Theme from KDE` \
 calibre `#Ebook management` \
-thunderbrid `#Mail client` \
+thunderbird `#Mail client` \
 ffmpeg `#Adds Codec Support to Firefox, and in general` \
 file-roller-nautilus `#More Archives supported in nautilus` \
 gimp `#The Image Editing Powerhouse - and its plugins` \
@@ -166,6 +166,7 @@ tuned `#Tuned can optimize your performance according to metrics. tuned-adm prof
 file-roller `#GNOME Archive manager` \
 meld `#Quick Diff Tool` \
 nano `#Because pressing i is too hard sometimes` \
+neofetch `#Pretty system info` \
 zsh `#Best shell` \
 zsh-syntax-highlighting `#Now with syntax highlighting` \
 baobab `#Disk Usage Analyzer` \
