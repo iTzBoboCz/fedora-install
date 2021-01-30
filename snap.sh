@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Might not be linked
+sudo ln -s /var/lib/snapd/snap /snap
+
 if [[ "{$LAPTOP}" = "true" ]]; then
   sudo snap install \
   auto-cpufreq
