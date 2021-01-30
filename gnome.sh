@@ -19,12 +19,8 @@ gsettings set org.gnome.desktop.calendar show-weekdate true
 bash <(curl -s https://raw.githubusercontent.com/brunelli/gnome-shell-extension-installer/master/gnome-shell-extension-installer) \
 307 `#Dash to Dock` \
 19 `#User Themes` \
-3499 `#Application Volume Mixer`
-
-if [[ "{$LAPTOP}" = "false" ]]; then
-  bash <(curl -s https://raw.githubusercontent.com/brunelli/gnome-shell-extension-installer/master/gnome-shell-extension-installer) \
-  fi1625 `#Soft Brightness` \
-fi
+3499 `#Application Volume Mixer` \
+1625 `#Soft Brightness`
 
 cd ~
 
@@ -67,6 +63,9 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 19.0
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 6.0
+
+# Disable hot corners
+gsettings set org.gnome.desktop.interface enable-hot-corners false
 
 #Add gtk3-widget-factory as a desktop icon
 cat > ~/.local/share/applications/gtk3-widget-factory.desktop << EOF
