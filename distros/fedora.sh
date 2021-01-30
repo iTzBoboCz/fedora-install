@@ -162,7 +162,6 @@ vlc `#Media player` \
 openssh-askpass `#Base Lib to let applications request ssh pass via gui` \
 pulseeffects `#Tweak your Music!` \
 python3-devel `#Python Development Gear` \
-tuned `#Tuned can optimize your performance according to metrics. tuned-adm profile powersave can help you on laptops, alot` \
 file-roller `#GNOME Archive manager` \
 meld `#Quick Diff Tool` \
 nano `#Because pressing i is too hard sometimes` \
@@ -209,21 +208,3 @@ if [ "${LAPTOP}" = true ]; then
   sudo systemctl enable --now tuned
   sudo tuned-adm profile balanced
 fi
-
-#Performance:
-#sudo tuned-adm profile desktop
-
-#Virtual Machine Host:
-#sudo tuned-adm profile virtual-host
-
-#Virtual Machine Guest:
-#sudo tuned-adm profile virtual-guest
-
-#Battery Saving:
-#sudo tuned-adm profile powersave
-
-# Virtual Machines
-# sudo systemctl enable --now libvirtd
-
-# Management of local/remote system(s) - available via http://localhost:9090
-# sudo systemctl enable --now cockpit.socket
