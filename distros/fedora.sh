@@ -68,48 +68,28 @@ graphics
 sudo dnf install \
 -y \
 "${QUIET}" \
-blender `#3D Software Powerhouse` \
 breeze-cursor-theme `#A more comfortable Cursor Theme from KDE` \
 calibre `#Ebook management` \
 thunderbird `#Mail client` \
 ffmpeg `#Adds Codec Support to Firefox, and in general` \
 file-roller-nautilus `#More Archives supported in nautilus` \
-gimp `#The Image Editing Powerhouse - and its plugins` \
-gimp-data-extras \
-gimp-dbp \
-gimp-dds-plugin \
-gimp-elsamuko \
-gimp-focusblur-plugin \
-gimp-fourier-plugin \
-gimpfx-foundry.noarch \
-gimp-high-pass-filter \
-gimp-layer-via-copy-cut \
-gimp-lensfun \
-gimp-lqr-plugin \
-gimp-luminosity-masks \
-gimp-paint-studio \
-gimp-resynthesizer \
-gimp-save-for-web \
-gimp-wavelet-decompose \
-gimp-wavelet-denoise-plugin \
 git \
 github-desktop \
-gmic-gimp \
 gnome-tweaks `#Your central place to make gnome like you want` \
 gource `#Git visualisation` \
 gtkhash-nautilus `#View file Hashes via nautilus` \
 htop `#Cli process monitor` \
 vlc `#Media player` \
-openssh-askpass `#Base Lib to let applications request ssh pass via gui` \
-file-roller `#GNOME Archive manager` \
 neofetch `#Pretty system info` \
-zsh `#Best shell` \
+zsh `#Z shell` \
 zsh-syntax-highlighting `#Now with syntax highlighting` \
 baobab `#Disk Usage Analyzer` \
-nextcloud-client `#Nextcloud Integration for Fedora` \
+gnome-extensions-app \
+nextcloud-client `#Nextcloud Integration` \
 nextcloud-client-nautilus `#Also for the File Manager, shows you file status` \
-sqlite-analyzer `#If you work with sqlite databases` \
-sqlitebrowser `#These two help alot`
+sqlitebrowser `#These two help alot` \
+snapd \
+util-linux-user `#Includes chsh (change shell)`
 
 if [ "${LAPTOP}" = true ]; then
   sudo systemctl enable --now tuned
